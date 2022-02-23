@@ -28,7 +28,7 @@ function add(yargs) {
 }
 
 function addCustomer({name, email, phone}) {
-    const customersJSON = fs.readFileSync('customers.json', 'utf-8'),
+    const customersJSON = fs.readFileSync('./customers/customers.json', 'utf-8'),
             customers = JSON.parse(customersJSON);
 
     customers.push({ name, email, phone });

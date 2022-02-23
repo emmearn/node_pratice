@@ -18,7 +18,7 @@ function del(yargs) {
 }
 
 function deleteCustomer(name) {
-    const customersJSON = fs.readFileSync('customers.json', 'utf-8'),
+    const customersJSON = fs.readFileSync('./customers/customers.json', 'utf-8'),
         customers = JSON.parse(customersJSON)
     customerIndex = customers.findIndex(customer => customer.name === name);
 

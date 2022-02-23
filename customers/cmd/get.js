@@ -26,7 +26,7 @@ function get(yargs) {
 }
 
 function getCustomer(name) {
-    const customersJSON = fs.readFileSync('customers.json', 'utf-8'),
+    const customersJSON = fs.readFileSync('./customers/customers.json', 'utf-8'),
             customers = JSON.parse(customersJSON),
             customer = customers.find(customer => customer.name === name),
             res = { status: false, suggestions: '', customer: null};
