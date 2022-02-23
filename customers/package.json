@@ -1,0 +1,27 @@
+{
+  "name": "nodejs_pratice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/m_arnone/nodejs_pratice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/m_arnone/nodejs_pratice/issues"
+  },
+  "homepage": "https://bitbucket.org/m_arnone/nodejs_pratice#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "yargs": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0"
+  }
+}
