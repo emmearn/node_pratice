@@ -1,13 +1,14 @@
+const { text } = require('express');
 const express = require('express');
 const router = express.Router();
 const dbClient = require('../dbclient');
 
 router.post('/article', async (req, res) => {
     const article = {
-        title: "Title1",
-        text: "text 1",
-        author: "Author1",
-        tag: ["node.js", "javascript", "mongodb"],
+        title: req.body.title,
+        text: req.body.text,
+        author: req.body.author,
+        tag: req.body.tag
     }
 
     const articlesColl = dbClient.getCollectionFromDb('articles', 'blog');
@@ -21,23 +22,8 @@ router.post('/article', async (req, res) => {
 });
 
 router.post('/articles', async (req, res) => {
-    const articles = [
-        {
-            title: "Title1",
-            text: "text 1",
-            author: "Author1",
-            tag: ["node.js", "javascript", "mongodb"],
-        },
-        {
-            title: "Title2",
-            text: "text 2",
-            author: "Author2",
-            tag: ["node.js", "javascript", "mongodb"],
-        }
-    ]
-
     const articlesColl = dbClient.getCollectionFromDb('articles', 'blog');
-    const insert = await articlesColl.insertMany(articles);
+    const insert = await articlesColl.insertMany(req.body.articles);
     if (insert.insertedCount) {
         res.send(`${insert.insertedCount} articles entered correctly`);
     } else {

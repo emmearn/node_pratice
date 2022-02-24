@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const ObjectId = require('mongodb').ObjectId;
 const dbClient = require('../dbclient');
 
-router.get('/article', async (req, res) => {
+router.get('/article/:_id', async (req, res) => {
     const articlesColl = dbClient.getCollectionFromDb('articles', 'blog');
-    const article = await articlesColl.findOne({ title: 'Title1' });
+    const filter = {
+        _id: new ObjectId(req.params._id)
+    };
+    const article = await articlesColl.findOne(filter);
     res.send(article);
 });
 
