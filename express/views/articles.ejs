@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><%- include('./partials/head') %></head>
+<body>
+    <header><%- include('./partials/header') %></header>
+
+    <main>
+        <% articles.forEach(article => { %>
+            <article>
+                <h1><%= article.title %></h1>
+                <p><%= article.text %></p>
+            </article>
+        <% }); %>
+    </main>
+    
+    <footer><%- include('./partials/footer') %></footer>
+</body>
+</html>

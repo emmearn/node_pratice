@@ -6,7 +6,24 @@ router.get('/articles', (req, res) => {
 });
 
 router.get('/news', (req, res) => {
-    res.send('Articles Page');
+    const articles = [
+        {
+            title: "title1",
+            text: "text1",
+        },
+        {
+            title: "title2",
+            text: "text2",
+        },
+        {
+            title: "title3",
+            text: "text3",
+        }
+    ]
+    res.render('articles', {
+        title: "Blog articles",
+        articles: articles
+    });
 });
 
 router.get('/article/:titolo', (req, res) => {

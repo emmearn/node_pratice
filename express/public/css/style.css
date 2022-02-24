@@ -1,3 +1,20 @@
-body {
-    color: red;
+nav a {
+    text-decoration: none;
+    color: #333
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+article {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+footer {
+    text-align: center;
 }

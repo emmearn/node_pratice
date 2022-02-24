@@ -9,9 +9,14 @@ router.get('/', (req, res, next) => {
     //     next(new Error('Error!'));
     // }, 50);
 
-    throw new ErrorHandler(400, 'Error!!!');
+    // throw new ErrorHandler(400, 'Error!!!');
 
-    res.send('Home page');
+    res.render('index', {
+        title: "Home page",
+        heading: "Home Page app",
+        description: "Created by Node",
+        
+    });
 });
 
 module.exports = router;
