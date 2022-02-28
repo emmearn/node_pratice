@@ -6,6 +6,7 @@ class ErrorHandler extends Error {
     }
 
     handle() {
+        console.log(this.code);
         switch(this.code) {
             case 400: this.badRequest(); break;
             case 404: this.notFound(); break;
@@ -15,16 +16,19 @@ class ErrorHandler extends Error {
     }
 
     badRequest() {
-        this.message = `${this.message || 'Bad Request'}`
+        console.log(this.message);
+        this.message = `${this.message || 'Bad Request'}`;
     }
 
     notFound() {
-        this.message = `${this.message || 'Not found'}`
+        console.log(this.message);
+        this.message = `${this.message || 'Not found'}`;
     }
 
     serverError() {
         // insert into DB or send mail
-        this.message = `${this.message || 'Server error'}`
+        console.log(this.message);
+        this.message = 'Server error';
     }
 }
 

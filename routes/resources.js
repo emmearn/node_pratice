@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.use(userAuth, userPerms);
 
-router.get('/user/resources/premium', (req, res) => {
+router.get('/resources/premium', (req, res) => {
     res.download('./resources/sample.pdf');
 });
 

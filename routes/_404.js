@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/contacts', (req, res) => {
-    res.send('Contact Page');
+router.get('*', (req, res) => {
+    res.status(404).send('Not found');
 });
 
 module.exports = router;

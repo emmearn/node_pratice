@@ -4,14 +4,16 @@
 <body>
     <header><%- include('./partials/header') %></header>
 
-    <main>
+    <article>
         <% articles.forEach(article => { %>
             <article>
-                <h1><%= article.title %></h1>
+                <h2><%= article.title %></h2>
+                <h1><%= article.title %></author>
                 <p><%= article.text %></p>
+                <span><%= article.tag %></span>
             </article>
         <% }); %>
-    </main>
+    </article>
     
     <footer><%- include('./partials/footer') %></footer>
 </body>
